@@ -27,7 +27,7 @@ env:
   - secure: VnX2R2L9OK4Av2kbSdqRA2vnSL6vCGZb2i0xCahDNawmYPEY99Yl5tpH8i6Pr88LfGkYqfPWSWLt3s2DFatg6TqXi4ymU9vQJwwi4r7JN6t9N7RFrncQ2483nWqFYGqDOkkDRaWZxsRGQClYwQPg2LBPI5vp6SUaQJ9jV7I7zN8xHOFQKFu3Al0OmgoYi1IPFJzkGjms3sfdKiEW3hBU6GnqNl+PgHJj6WweVBMsMB+DeVjmGgSTrPbPHS7hH+o/+QIDjxEJTVkMuzR/cqK0BVBmbTpwWK/F3udlvj5VaebtG8r60ZEOjwWo40s04if09WRNAlyGb1ouOlRuF0Kh5O/MNfvoM1XPLW9ynJYnkxzQOTsDtvl8tukilFG/t1t5hIA+fjSAbXkJTYqis7KgG+9N+lS6k9YY4iRklDuO+9DywnyEUtJAIwOdKs8vccCANwhZ6d759vuOdfEL6lNUlmYA6rOXWL54/HcXchWZUzmAGLIJ5Vgaoe54ujw9Be1wSuoaooEEUXjuEX9a24Z35Nleui5M3UhOQhewVtWHqI4o/ednEas4L0yf6oY7svZnucc4ixlOfeZA3nYAggjTq06fU9BIqV1Pgr/6ORTKY+rmlkULr9nvdKeyTvvbvtMf27wHWr+Icj2leCHch3iu2wzlL93dhuxe3cxkL2SC/FQ=
   - COMMIT=${TRAVIS_COMMIT::7}
 after_success:
-  - docker login -u $DOCKER_USER11 -p $DOCKER_PASS11
+  - docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
   - export TAG=`if [ "$TRAVIS_BRANCH" == "master" ]; then echo "latest"; else echo $TRAVIS_BRANCH&amp;amp;amp;amp;amp;amp;amp;lt;span data-mce-type="bookmark" style="display: inline-block; width: 0px; overflow: hidden; line-height: 0;" class="mce_SELRES_start"&amp;amp;amp;amp;amp;amp;amp;gt;&amp;amp;amp;amp;amp;amp;amp;lt;/span&amp;amp;amp;amp;amp;amp;amp;gt;; fi`
   - export IMAGE_NAME=acdd1234/transaction
   - docker build -t $IMAGE_NAME:$COMMIT .
