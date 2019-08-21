@@ -18,7 +18,7 @@ branches:
 before_install:
   - chmod +x mvnw
   - gem install travis
-  - export BUILD_NAME=test
+  - export BUILD_NAME=test1234
   - export IMAGE_NAME=acdd1234/transaction
 env:
   global:
