@@ -15,5 +15,9 @@ notifications:
 branches:
   only:
   - master
+before_install:
+  - chmod +x mvnw
+  
+  
   
   
