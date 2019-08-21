@@ -18,6 +18,9 @@ branches:
 before_install:
   - chmod +x mvnw
   - gem install travis
+  - export BUILD_NAME=$TRAVIS_BUILD_NUMBER
+scripts:
+  sh travis_scripts/deploy_to_docker_hub.sh
 env:
   global:
   - secure: mBgpG9/WRZ8xe4c2Am+1AWUHC1rIi5YH4yr/FaI7wC3WGb9VfQV+3At5SBgg/7sIrC2AJuiEUTgpVB+fSLVR6ggBJTDb8ctTSE7s88OJDJ5SV5q/qD8LB0AKPc7jz1nyOYXfuyVtVzvViUs8XFUsefLIMetiMW81yvg/KBA80RkcP6f5+1TKJnqHfQtvPAZ/21ac5FG4kO4sTN/qlNBlZGPuiBH6QtcPkaQZD36iujr+9dy851Hv5Hz/yR90zNavT38yJbzfLQ/nu+qxMcLp1hLTbL4T0EIY4dPPKt0FMHPqmb2NKFf62SUnmBFk8UvMM9kbGs+wf/7wr7v8gmzMXXP97RvkHuZJX7TgdmNpO4dZjCxtoiqi77UDTaPGrsdd4TqNxiUQ6GhVE2NCksIaJHwduNDqbH7W4EfXVxVHIcQnJ2J8CifFeE04uCwIQMcdtQyo9OqhVHrHP+5ZyNT8fLAN2s8NZlYZp5VMH6Y5rDqXV16dGdUE49TA/wSLzD6xfhU1bZu8KZabzPWwPCQRCMzHz6atcqPJ8HeAWJpMBYd84y6lOVgB4GoOUbs4KP7F4irpD16HYs4qPdi+9xCSmsJIhtclXC4vaevNuZNENJyMu4hG1CfljO1RkypIdleatK3noMU5dMMVjv0CaKYbb+JA8i17z4mZ+IGYmftYnNk=
