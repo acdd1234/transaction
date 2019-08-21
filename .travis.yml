@@ -18,6 +18,7 @@ branches:
 before_install:
   - chmod +x mvnw
   - gem install travis
+  - mkdir -p /usr/local/bin/ecs-cli
   - curl -o /usr/local/bin/ecs-cli https://s3.amazonaws.com/amazon-ecs-cli/ecs-cli-linux-amd64-latest
   - export BUILD_NAME=test12345
   - export IMAGE_NAME=acdd1234/transaction
