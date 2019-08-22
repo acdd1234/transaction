@@ -39,7 +39,7 @@ after_success:
 - docker build -t $IMAGE_NAME:$BUILD_NAME .
 - docker tag $MAGE_NAME:$BUILD_NAME $IMAGE_NAME:$TAG
 - docker push $IMAGE_NAME
-- ecs-cli configure profile --profile-name $BUILD_NAME --access-key $BUILD_NAME --secret-key $BUILD_NAME
+- ecs-cli configure profile --profile-name transactionprofile --access-key $AWS_ACCESS_KEY --secret-key $AWS_SECRET_KEY
 - ecs-cli compose --file docker/common/docker-compose.yml up
 
 
