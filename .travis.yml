@@ -20,7 +20,7 @@ before_install:
 - gem install travis
 - sudo mkdir -p /usr/local/bin/ecs-cli
 - pip install --user awscli
-- pip install --user ecscli
+- sudo curl -o /usr/local/bin/ecs-cli https://amazon-ecs-cli.s3.amazonaws.com/ecs-cli-linux-amd64-latest
 - export PATH=$PATH:$HOME/.local/bin
 - export BUILD_NAME=test123456
 - export IMAGE_NAME=acdd1234/transaction
@@ -35,7 +35,7 @@ after_success:
 - docker build -t $IMAGE_NAME:$BUILD_NAME .
 - docker tag $MAGE_NAME:$BUILD_NAME $IMAGE_NAME:$TAG
 - docker push $IMAGE_NAME
-- ecs-cli configure --region us-west-1 --access-key $AWS_ACCESS_KEY --secret-key $AWS_SECRET_KEY --cluster transactioncicd
+- ecs-cli configure --region us-east-1 --access-key $AWS_ACCESS_KEY --secret-key $AWS_SECRET_KEY --cluster transactioncicd
 - ecs-cli compose --file docker/common/docker-compose.yml up
 
 
