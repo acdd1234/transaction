@@ -34,5 +34,7 @@ after_success:
 - docker build -t $IMAGE_NAME:$BUILD_NAME .
 - docker tag $MAGE_NAME:$BUILD_NAME $IMAGE_NAME:$TAG
 - docker push $IMAGE_NAME
-- ecs-cli configure --region us-wes-1 --access-key $AWS_ACCESS_KEY --secret-key $AWS_SECRET_KEY --cluster transactioncicd
+- ecs-cli configure --region us-west-1 --access-key $AWS_ACCESS_KEY --secret-key $AWS_SECRET_KEY --cluster transactioncicd
+- ecs-cli compose --file docker/common/docker-compose.yml up
+
 
