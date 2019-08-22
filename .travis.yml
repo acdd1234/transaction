@@ -21,7 +21,7 @@ before_install:
 - sudo mkdir -p /usr/local/bin/ecs-cli
 - pip install --user awscli
 - export PATH=$PATH:$HOME/.local/bin
-- export BUILD_NAME=test12345
+- export BUILD_NAME=test123456
 - export IMAGE_NAME=acdd1234/transaction
 env:
   global:
@@ -34,3 +34,5 @@ after_success:
 - docker build -t $IMAGE_NAME:$BUILD_NAME .
 - docker tag $MAGE_NAME:$BUILD_NAME $IMAGE_NAME:$TAG
 - docker push $IMAGE_NAME
+- ecs-cli configure --region us-wes-1 --access-key $AWS_ACCESS_KEY --secret-key $AWS_SECRET_KEY --cluster transactioncicd
+
