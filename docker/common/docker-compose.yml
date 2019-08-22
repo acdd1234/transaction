@@ -1,0 +1,4 @@
+transaction:
+   image: acdd1234/transaction:test1234567
+   ports:
+     - "9999:8080"
