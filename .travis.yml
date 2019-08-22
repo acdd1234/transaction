@@ -40,6 +40,7 @@ after_success:
 - docker tag $MAGE_NAME:$BUILD_NAME $IMAGE_NAME:$TAG
 - docker push $IMAGE_NAME
 - ecs-cli configure profile --profile-name transactionprofile --access-key $AWS_ACCESS_KEY --secret-key $AWS_SECRET_KEY
+- ecs-cli configure --cluster transactioncicd --default-launch-type EC2 --region us-east-1 --config-name transactioncicd
 - ecs-cli compose --file docker/common/docker-compose.yml up
 
 
