@@ -20,7 +20,7 @@ before_install:
 - gem install travis
 - sudo mkdir -p /usr/local/bin/ecs-cli
 - pip install --user awscli
-- sudo curl -o /usr/local/bin/ecs-cli https://amazon-ecs-cli.s3.amazonaws.com/ecs-cli-linux-amd64-latest
+- curl -o /usr/local/bin/ecs-cli https://amazon-ecs-cli.s3.amazonaws.com/ecs-cli-linux-amd64-latest
 - export PATH=$PATH:$HOME/.local/bin
 - export BUILD_NAME=test123456
 - export IMAGE_NAME=acdd1234/transaction
