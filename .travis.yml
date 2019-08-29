@@ -24,7 +24,7 @@ before_install:
 - sudo mv ecs-cli-linux-amd64-latest /usr/local/bin/ecs-cli
 - sudo chmod +x /usr/local/bin/ecs-cli
 - export PATH=$PATH:$HOME/.local/bin
-- export BUILD_NAME=test1234567
+- export BUILD_NAME=test1234568
 - export IMAGE_NAME=acdd1234/transaction
 - export USERN=ama
 - export PASS=pas
@@ -37,8 +37,8 @@ env:
 after_success:
 - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
 - docker build -t $IMAGE_NAME:$BUILD_NAME .
-- docker tag $MAGE_NAME:$BUILD_NAME $IMAGE_NAME:$TAG
-- docker push $IMAGE_NAME
+- docker tag $IMAGE_NAME:$BUILD_NAME $IMAGE_NAME:$BUILD_NAME
+- docker push $IMAGE_NAME:$BUILD_NAME
 - ecs-cli configure profile --profile-name transactionprofile --access-key $AWS_ACCESS_KEY --secret-key $AWS_SECRET_KEY
 - ecs-cli configure --cluster transactioncicd --default-launch-type EC2 --region us-east-1 --config-name transactioncicd
 - ecs-cli compose --file docker/common/docker-compose.yml up
