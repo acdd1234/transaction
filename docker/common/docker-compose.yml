@@ -1,4 +1,4 @@
 transaction:
-   image: acdd1234/transaction:test1234568
+   image: acdd1234/transaction:test1234569
    ports:
      - "8080:8080"
