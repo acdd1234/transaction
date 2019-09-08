@@ -16,7 +16,7 @@ public class TransactionApplication {
 	@RequestMapping(value="/")
 	public String hello(){
 		
-		return "Amadou";
+		return "Amadou Cisse";
 	}
 	
 	
